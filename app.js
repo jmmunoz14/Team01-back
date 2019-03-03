@@ -1,6 +1,18 @@
 require('./config/config');
 require('./models/db');
 
+
+//DB
+/*mongoose.connect()
+    .then(db=>console.log('BD connected'))
+    .catch(err=> console.log(err));
+*/
+
+//import router
+var indexRouter = require('./routes/index');
+var partidasRouter = require('./routes/partidas');
+
+
 const path = require('path');
 const morgan = require('morgan');
 var mongoose = require('mongoose');
@@ -24,19 +36,6 @@ app.use((err, req, res, next) => {
         res.status(422).send(valErrors)
     }
 });
-app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
-
-
-
-//DB
-/*mongoose.connect()
-    .then(db=>console.log('BD connected'))
-    .catch(err=> console.log(err));
-*/
-
-//import router
-var indexRouter = require('./routes/index');
-var partidasRouter = require('./routes/partidas');
 
 //settings
 app.use(express.json());
@@ -50,6 +49,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 app.use('/partidas', partidasRouter);
 
-// PORT
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening ${port}...`));
+
+app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
+

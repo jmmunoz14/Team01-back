@@ -1,0 +1,17 @@
+Materia:{
+  nombre: "calculo",
+  juegos: [1,2,3,4],
+  habilidades: [1,2,3]
+}
+Juego{
+  id: 1,
+  partidas: [12,13,14],
+  habilidades: [1,2,3],
+  materias: ['calculo']
+}
+Habilidad{
+  id: 1,
+  nombre: "Multiplicación de matrices",
+  materias: ['algebra lineal 1', 'calculo vectorial'],
+  juegos: [1,2]  
+}

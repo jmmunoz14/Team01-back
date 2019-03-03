@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var jsonfile = require('jsonfile');
 var Joi = require('joi');
+const Task = require('../models/schemaPartidas');
 const file = './persistence/partidas.json';
 
 var partidas;
@@ -12,6 +13,7 @@ function validatePartida(partida) {
 		idJuego: Joi.number().required(),
 		finalizado: Joi.boolean().required(),
 		idJugadores: Joi.optional(),
+		puntajes: Joi.optional(),
 		chat: Joi.optional()
 	};
 	return Joi.validate(partida, schema);
@@ -35,7 +37,7 @@ router.post('/', (req, res) => {
 	var partida = req.body;
 	partida.id = partidas.length + 1;
   partidas.push(partida);
-
+	console.log(new Task(req.body));
   jsonfile.writeFile(file, partidas).then(res => {console.log('Write complete')}).catch(error => console.error(error));
 
 	res.send(partida);

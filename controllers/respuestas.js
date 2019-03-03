@@ -39,3 +39,39 @@ module.exports.obtain = (req, res, next) => {
     });
 
 }
+
+module.exports.obtainall = (req, res, next) => {
+    var respuesta = new Respuesta();
+    
+    respuesta=Respuesta.findOne({ },
+        (err, respuesta) => {
+            if (err)
+            res.send(err);
+            // unknown user
+            else if (!respuesta)
+               res.send('No existe esa respuesta');
+            // wrong password
+            else
+            res.send(respuesta);
+ 
+    });
+
+}
+
+module.exports.remove = (req, res, next) => {
+    var respuesta = new Respuesta();
+    console.log("id " + req.body.id);
+    respuesta=Respuesta.deleteOne({ id: req.body.id },
+        (err, respuesta) => {
+            if (err)
+            res.send(err);
+            // unknown user
+            else if (!respuesta)
+               res.send('No existe esa respuesta');
+            // wrong password
+            else
+            res.send('respuesta eliminada');
+ 
+    });
+
+}

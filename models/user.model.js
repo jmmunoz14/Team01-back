@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 var userSchema = new mongoose.Schema({
     id:{
         type: Number,
+        required: 'id can\'t be empty',
         unique: true
     },
     username: {

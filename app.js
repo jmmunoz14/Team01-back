@@ -19,13 +19,18 @@ var mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const rtsIndex = require('./routes/user');
+const rtsUser = require('./routes/user');
+const rtsQuestion = require('./routes/preguntas');
+const rtsAnswer = require('./routes/respuestas');
 var app = express();
  
 // middleware
 app.use(bodyParser.json());
 app.use(cors());
-app.use('/api', rtsIndex);
+app.use('/api', rtsUser);
+app.use('/api', rtsQuestion);
+app.use('/api', rtsAnswer);
+
 // start server
 
 // error handler

@@ -13,7 +13,7 @@ var app = express();
 
 //import router
 var indexRouter = require('./routes/index');
-var partidasRouter = require('./routes/partida');
+var partidasRouter = require('./routes/partidas');
 
 //settings
 app.use(express.json());

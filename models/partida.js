@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const TaskSchema = new Schema({
+const partidaSchema = new Schema({
+    id: mongoose.Schema.Types.ObjectId,
     idJugadores: [Number],
     idJuego: Number,
     finalizado: Boolean,
@@ -13,4 +14,4 @@ const TaskSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('tasks', TaskSchema);
+module.exports = mongoose.model('Partida', partidaSchema);

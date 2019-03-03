@@ -1,0 +1,29 @@
+Materia:{
+  nombre: "calculo",
+  juegos: [1,2,3,4],
+  habilidades: [1,2,3]
+}
+Juego{
+  id: 1,
+  partidas: [12,13,14],
+  habilidades: [1,2,3],
+  materias: ['calculo']
+}
+Habilidad{
+  id: 1,
+  nombre: "Multiplicación de matrices",
+  materias: ['algebra lineal 1', 'calculo vectorial'],
+  juegos: [1,2]  
+}
+Partida:{
+  "id": 1,
+  "idJugadores": [74,76,76,34,42],
+  "idJuego": 100,
+  "finalizado": true,
+  "puntajes": [762,953,365,141,425],
+  "chat": {
+    "id": 1,
+    "color": "#d0e11a",
+    "enabled": true
+  }
+}

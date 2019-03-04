@@ -18,13 +18,14 @@
 -
 ---
 # Instrucciones para el despliegue:
-##### 1. Instalar.
+##### 1. Instalar/Actualizar.
 -->
 ```sh
+$ npm update
 $ npm install
 ```
-##### 2. Es necesario instalar algunas dependencias que pueda pedir el archivo de configuración packages.json (Mongoose, passport, entre otros)
-##### 3. Inicio
+##### 2. Es necesario instalar algunas dependencias que pueda pedir el archivo de configuración packages.json (Mongoose, passport, entre otros).
+##### 3. Ejecución.
 -->
 ```sh
 $ npm start

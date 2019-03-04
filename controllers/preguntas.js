@@ -42,3 +42,38 @@ module.exports.obtain = (req, res, next) => {
 
 }
 
+module.exports.obtainall = (req, res, next) => {
+    var pregunta = new Pregunta();
+    
+    pregunta=Pregunta.findOne({ },
+        (err, pregunta) => {
+            if (err)
+            res.send(err);
+            // unknown user
+            else if (!pregunta)
+               res.send('No existen preguntas de esta materia');
+            // wrong password
+            else
+            res.send(pregunta);
+ 
+    });
+
+}
+
+module.exports.remove = (req, res, next) => {
+    var pregunta = new Pregunta();
+    console.log("id " + req.body.id);
+    pregunta=Pregunta.deleteOne({ id: req.body.id },
+        (err, pregunta) => {
+            if (err)
+            res.send(err);
+            // unknown user
+            else if (!pregunta)
+               res.send('No existen preguntas de con este id');
+            // wrong password
+            else
+            res.send('pregunta eliminada');
+ 
+    });
+
+}

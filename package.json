@@ -1,35 +1,23 @@
 {
-  "name": "team01-back",
-  "version": "1.0.0",
-  "description": "Repositorio para el equipo 1",
-  "main": "index.js",
+  "name": "copia-proyecto",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/isis3710-uniandes/Team01-back.git"
-  },
-  "author": "Team01",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/isis3710-uniandes/Team01-back/issues"
-  },
-  "homepage": "https://github.com/isis3710-uniandes/Team01-back#readme",
   "dependencies": {
+    "bcrypt": "^3.0.4",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
-    "express": "^4.16.4",
-    "mongoose": "^5.4.16",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
     "joi": "^14.3.1",
     "jsonfile": "^5.0.0",
-    "morgan": "^1.9.1"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.10"
+    "mongoose": "^5.4.16",
+    "morgan": "~1.9.0",
+    "passport": "^0.4.0"
   }
 }

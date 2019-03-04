@@ -6,6 +6,7 @@ Materia:{
 }
 Juego{
   id: 1,
+  nombre: "Multiplicadoooor",
   partidas: [12,13,14],
   habilidades: [1,2,3],
   materias: ['calculo']

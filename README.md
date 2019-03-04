@@ -1,8 +1,9 @@
 # Team01
 ## Repositorio para el Equipo 1:
-##### Nuestra idea consiste en realizar un juego de conocimientos matemáticos para ayudar a los estudiantes en algunas materias relacionadas a fines de la matemática y el cálculo especialmente enfocado a la Universidad de los Andes. Esta divide cada 'test' por materias y dificultad, también existe un sistema de ranking para los más hábiles que respondan estas preguntas, lo que permite a los jugadores crear un ambiente competitivo amigable.
+##### Nuestra idea consiste en realizar juegos que pretenden reforzar y estimular las habilidades matemáticas. Esto con el fin de ayudar a los estudiantes de la Universidad de los Andes en las materias relacionadas a las matemáticas. 
+Cada juego está relacionado con unas materias y unas habilidades, y para cada partida existe un ranking para los participanes, lo cual permite crear un ambiente competitivo amigable, que así mismo estimule el aprendizaje.
 --
-##### El juego se diferencia con su principal competencia [www.mathgames.com](https://www.mathgames.com/) en el hecho de que está disponible para idiomas en español, además de que permite preguntas más complejas y especializadas para materias Universitarias y no solo para educación básica.
+##### La página se diferencia de su principal competencia [www.mathgames.com](https://www.mathgames.com/) en que está especializada para materias Universitarias y no solo para educación básica (de colegio). Además, está disponible en español, a diferencia de la otra, que está sólo en inglés.
 --
 ##### Para el modelado de la página creamos los siguientes 9 recursos:
 --
@@ -15,9 +16,8 @@
 ##### •	Juegos
 ##### •	Chats
 ##### •	Blogs
+-
 ---
-## La persistencia de estos recursos se realiza a traves de la base de datos de MongoDB
-
 # Instrucciones para el despliegue:
 ##### 1. Instalar/Actualizar.
 -->

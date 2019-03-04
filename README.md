@@ -43,5 +43,5 @@ $ MongoDB conexión satisfactoria
 ``` 
 ##### 5. Es posible observar los datos de la persistencia en la base de datos de MongoDB utilizando la siguiente URI: [mongodb://admin:password1@ds159025.mlab.com:59025/team1web](mongodb://admin:password1@ds159025.mlab.com:59025/team1web) y accediendo a través de MongoDB.
 --*--
-##### 6. Las colecciones postman se encuentran en la carpeta "colecciones postman con test", importarlas a postman y correr el archivo. Existe la posibilidad de correr algunos test de forma automática al estar en la colección, pero otros deben correrse de forma manual.
+##### 6. Las colecciones postman se encuentran en la carpeta "colecciones postman con test", importarlas a postman y correr el archivo. Existe la posibilidad de correr algunos test de forma automática al estar en la colección, pero otros deben correrse de forma manual debido al funcionamiento de la asignación de ids de MongoDB que se realiza automáticamente.
 ---

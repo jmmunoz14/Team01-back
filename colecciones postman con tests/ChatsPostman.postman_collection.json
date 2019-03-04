@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "9d918200-3293-40d4-b4f6-04b82592da49",
+		"name": "ChatsPostman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Chats",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/chat/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chat",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Chat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idJugadores\": [\n            89,\n            74,\n            9,\n            32,\n            70\n        ],\n        \"idJuego\": 62,\n        \"finalizado\": true,\n        \"puntajes\": [\n            38,\n            831,\n            281,\n            14,\n            104\n        ],\n        \"chat\": {\n            \"id\": 73,\n            \"color\": \"#e786d1POST\",\n            \"enabled\": true\n        }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Chat",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"idJugadores\": [\n            89,\n            74,\n            9,\n            32,\n            70\n        ],\n        \"idJuego\": 62,\n        \"finalizado\": true,\n        \"puntajes\": [\n            38,\n            831,\n            281,\n            14,\n            104\n        ],\n        \"chat\": {\n            \"id\": 73,\n            \"color\": \"#e786d1PUT\",\n            \"enabled\": true\n        }\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/chat/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chat",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Chat",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/chat/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"chat",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

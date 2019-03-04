@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true},(err) => {
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true},(err) => {
     if(!err) 
     {
         console.log('MongoDB conexion satisfactoria');
@@ -12,5 +12,8 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true},(err) => {
 require('./user.model');
 require('./preguntas.model');
 require('./respuestas.model');
+require('./partida');
+require('./chat');
+require('./blog');
 
 

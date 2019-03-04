@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "825f6107-84d9-4e5c-8382-c7b27fd2199f",
+		"name": "Juegos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"item": [
+				{
+					"name": "localhost:3000/juegos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"name\" : \"Multiplicadoooor\",\n  \"partidas\" : [12,13,14],\n  \"habilidades\" : [1,2,3],\n  \"materias\" : [1,3]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/juegos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"juegos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Retrieve/Get",
+			"item": [
+				{
+					"name": "localhost:3000/juegos/1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"calculo\",\n\t\"id\": 1,\n\t\"juegos\": [1,2],\n\t\"habilidades\": [1,2]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/juegos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"juegos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/juegos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"calculo\",\n\t\"id\": 1,\n\t\"juegos\": [1,2],\n\t\"habilidades\": [1,2]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/materias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"materias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"item": [
+				{
+					"name": "localhost:3000/juegos/1",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"id\" : \"2\"\n\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/juegos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"juegos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/juegos/2",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"id\" : 1\n\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/juegos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"juegos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"item": [
+				{
+					"name": "localhost:3000/juegos/1",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"calculo\",\n\t\"id\": 1,\n\t\"juegos\": [1,2],\n\t\"habilidades\": [1,2]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/juegos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"juegos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

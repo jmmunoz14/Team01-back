@@ -16,6 +16,10 @@ const cors = require('cors');
 const rtsUser = require('./routes/user');
 const rtsQuestion = require('./routes/preguntas');
 const rtsAnswer = require('./routes/respuestas');
+const juegoRoutes = require("./routes/juegos");
+const materiaRoutes = require("./routes/materias");
+const habilidadRoutes = require("./routes/habilidades");
+
 var app = express();
  
 // middleware
@@ -24,6 +28,10 @@ app.use(cors());
 app.use('/api', rtsUser);
 app.use('/api', rtsQuestion);
 app.use('/api', rtsAnswer);
+
+app.use("/materias", materiaRoutes);
+app.use("/juegos", juegoRoutes);
+app.use("/habilidades", habilidadRoutes);
 
 // start server
 

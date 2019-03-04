@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "b54dde9d-b620-40e0-96cd-e4b5e9e0e690",
+		"name": "Materias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"item": [
+				{
+					"name": "localhost:3000/materias",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"calculo\",\n\t\"id\": 1,\n\t\"juegos\": [1,2],\n\t\"habilidades\": [1,2]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/materias",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"materias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Retrieve/Get",
+			"item": [
+				{
+					"name": "localhost:3000/materias",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/materias",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"materias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/materias/1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"calculo\",\n\t\"id\": 1,\n\t\"juegos\": [1,2],\n\t\"habilidades\": [1,2]\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/materias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"materias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"item": [
+				{
+					"name": "localhost:3000/materias/1",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"calculo diferencial\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/materias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"materias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/materias/1",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"calculo integral\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/materias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"materias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"item": [
+				{
+					"name": "localhost:3000/materias/1",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/materias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"materias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

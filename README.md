@@ -3,14 +3,14 @@
 ##### Nuestra idea consiste en realizar juegos que pretenden reforzar y estimular las habilidades matemáticas. Esto con el fin de ayudar a los estudiantes de la Universidad de los Andes en las materias relacionadas a las matemáticas. 
 ##### Cada juego está relacionado con unas materias y unas habilidades, y para cada partida existe un ranking para los participanes, lo cual permite crear un ambiente competitivo amigable, que así mismo estimule el aprendizaje.
 --
-##### La página se diferencia de su principal competencia [www.mathgames.com](https://www.mathgames.com/) en que está especializada para materias Universitarias y no solo para educación básica (de colegio). Además, está disponible en español, a diferencia de la otra, que está sólo en inglés.
+##### La página se diferencia de su principal competencia, [www.mathgames.com](https://www.mathgames.com/) en que está especializada para materias Universitarias y no solo para educación básica (de colegio). Además, está disponible en español, a diferencia de la otra, que está sólo en inglés.
 --
 ##### Para el modelado de la página creamos los siguientes 9 recursos:
 --
 ##### •	Usuarios
 ##### •	Partidas
-##### •	Respuestas
 ##### •	Preguntas
+##### •	Respuestas
 ##### •	Materias
 ##### •	Habilidades
 ##### •	Juegos

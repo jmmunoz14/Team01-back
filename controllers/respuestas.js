@@ -43,7 +43,7 @@ module.exports.obtain = (req, res, next) => {
 module.exports.obtainall = (req, res, next) => {
     var respuesta = new Respuesta();
     
-    respuesta=Respuesta.findOne({ },
+    respuesta=Respuesta.find({ },
         (err, respuesta) => {
             if (err)
             res.send(err);

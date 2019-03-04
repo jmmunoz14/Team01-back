@@ -27,7 +27,7 @@ module.exports.register = (req, res, next) => {
 module.exports.obtain = (req, res, next) => {
     var pregunta = new Pregunta();
     console.log("materia " + req.body.materia);
-    pregunta=Pregunta.findOne({ materia: req.body.materia },
+    pregunta=Pregunta.find({ materia: req.body.materia },
         (err, pregunta) => {
             if (err)
             res.send(err);
@@ -45,7 +45,7 @@ module.exports.obtain = (req, res, next) => {
 module.exports.obtainall = (req, res, next) => {
     var pregunta = new Pregunta();
     
-    pregunta=Pregunta.findOne({ },
+    pregunta=Pregunta.find({ },
         (err, pregunta) => {
             if (err)
             res.send(err);

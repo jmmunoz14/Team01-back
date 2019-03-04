@@ -9,7 +9,7 @@ var preguntasSchema = new mongoose.Schema({
     materia: {
         type: String,
         required: 'Subject can\'t be empty',
-        unique: true
+        unique: false
     },
     enunciado: {
         type: String,

@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "49fc1f26-6c70-455c-9011-d85cad40593b",
+		"name": "Respuestas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/api/newanswer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "813bcd8e-6c28-4c11-98e8-90c0b0b021ab",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":1,\n\t\"texto\":\"1\"\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/newanswer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"newanswer"
+					]
+				},
+				"description": "crear una nueva respuesta"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/obtainanswer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "90cd22e9-76da-4363-8170-2e5660e68254",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"1\"\n\t\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/obtainanswer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"obtainanswer"
+					]
+				},
+				"description": "buscar una respuesta basado en un id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/allanswer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7d2a35b7-5dc4-4d86-8fa0-a081ae901a79",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/allanswer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"allanswer"
+					]
+				},
+				"description": "encontrar todas las respuestas"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/delanswer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4e031e3f-1c25-4ebd-b8ea-a47394266cdb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":1\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/delanswer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"delanswer"
+					]
+				},
+				"description": "borrar una respuesta"
+			},
+			"response": []
+		}
+	]
+}

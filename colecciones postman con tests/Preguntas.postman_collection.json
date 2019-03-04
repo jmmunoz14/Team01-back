@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "0894106e-1483-4ef1-ac80-05a4787fc29a",
+		"name": "Preguntas",
+		"description": "Primero correr el test de post para poder el test de delete.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/api/newquestion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5fe20657-7aee-482f-8f36-35ee61f2d7ac",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":1,\n\t\"materia\":\"calculo integral\",\n\t\"enunciado\":\"integrate from 0 to 2  the following function: x/2\",\n\t\"respuestaID\":\"1\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/newquestion",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"newquestion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/obtainquestion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a6b54e6c-f09a-479b-97d4-8938c1b10729",
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"materia\":\"calculo integral\"\n\t\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/obtainquestion",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"obtainquestion"
+					]
+				},
+				"description": "obtener preguntas de una determinada materia"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/allquestion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e092e2e2-546c-4698-986c-e428c3f30987",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/allquestion",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"allquestion"
+					]
+				},
+				"description": "obtener todas las preguntas"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/delquest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "922d7976-9dd1-4247-9f23-6e2a7bf8b515",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":1\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/delquest",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"delquest"
+					]
+				},
+				"description": "borrar pregunta"
+			},
+			"response": []
+		}
+	]
+}

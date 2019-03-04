@@ -1,32 +1,26 @@
 var express = require('express');
 var router = express.Router();
-var jsonfile = require('jsonfile');
 var Joi = require('joi');
 const mongoose = require('mongoose');
 const Partida = require('../models/partida');
-const file = './persistence/partidas.json';
-
-var partidas;
-jsonfile.readFile(file).then(obj => partidas = obj).catch(error => console.error(error));
 
 function validatePartida(partida) {
 	const schema = {
 		idJuego: Joi.number().required(),
 		finalizado: Joi.boolean().required(),
-		idJugadores: Joi.optional(),
+		idUsuarios: Joi.optional(),
 		puntajes: Joi.optional(),
 		chat: Joi.optional()
 	};
 	return Joi.validate(partida, schema);
 };
 
-router.get('/', (req, res) => {
-	//res.send(partidas);
-	Product.find()
+router.get('/', (req, res, next) => {
+	Partida.find()
 		.exec()
 		.then(docs => {
 			console.log(docs);
-			res.status(200).json(doc);
+			res.status(200).json(docs);
 		})
 		.catch(err => {
 			console.log(err);
@@ -34,12 +28,9 @@ router.get('/', (req, res) => {
 		});
 });
 
-router.get('/:id', (req, res) => {
-	/*const partida = partidas.find(j => j.id === parseInt(req.params.id));
-	if (!partida) return res.status(404).send('No existe id de partida');
-	res.send(partida);*/
-	const id = req.params.id;
-	Product.findById(id)
+router.get('/:partidaId', (req, res, next) => {
+	const id = req.params.partidaId;
+	Partida.findById(id)
 		.exec()
 		.then(doc => {
 			console.log("From DB" + doc);
@@ -56,23 +47,10 @@ router.get('/:id', (req, res) => {
 		});
 });
 
-router.post('/', (req, res) => {
-
-	const { error } = validatePartida(req.body);
-	if (error) return res.status(400).send(error.details[0].message);
-
-	/*var partida = req.body;
-	partida.id = partidas.length + 1;
-	partidas.push(partida);
-	jsonfile.writeFile(file, partidas).then(res => { console.log('Write complete') }).catch(error => console.error(error));
-	res.send(partida);*/
-
-
-	//console.log(new Task(req.body));
-
+router.post('/', (req, res, next) => {
 	const partida = new Partida({
-		id: new mongoose.Types.ObjectId(),
-		idJugadores: req.body.idJugadores,
+		_id: new mongoose.Types.ObjectId(),
+		idUsuarios: req.body.idUsuarios,
 		idJuego: req.body.idJuego,
 		finalizado: req.body.finalizado,
 		puntajes: req.body.puntajes,
@@ -92,46 +70,25 @@ router.post('/', (req, res) => {
 				error: err
 			})
 		});
+});
 
+router.put('/:partidaId', (req, res, next) => {
 
+	Partida.findOneAndUpdate(
+		req.params.partidaId,
+		req.body,
+		{ new: true },
+		(err, todo) => {
+			if (err) return res.status(500).send(err);
+			return res.send(todo);
+		}
+	);
 
 });
 
-router.patch('/:id', (req, res) => {
-	/*var partida = partidas.find(j => j.id === parseInt(req.params.id));
-	if (!partida) return res.status(404).send('No existe id de partida');
-
-	const { error } = validatePartida(req.body);
-	if (error) return res.status(400).send(error.details[0].message);
-
-	partida.idJugadores = req.body.idJugadores;
-	partida.idJuego = req.body.idJuego;
-	partida.finalizado = req.body.finalizado;
-	partida.puntajes = req.body.puntajes;
-	partida.chat = req.body.chat;
-
-	jsonfile.writeFile(file, partidas).then(res => { console.log('Write complete') }).catch(error => console.error(error));
-
-	res.send(partida);*/
-
-	const { error } = validatePartida(req.body);
-	if (error) return res.status(400).send(error.details[0].message);
-	const idp = req.params.id;
-	//Partida.update({ id: idp },{$set:{}});
-});
-
-router.delete('/:id', (req, res) => {
-	/*const partida = partidas.find(j => j.id === parseInt(req.params.id));
-	if (!partida) return res.status(404).send('No existe id de partida');
-
-	const index = partidas.indexOf(partida);
-	partidas.splice(index, 1);
-
-	jsonfile.writeFile(file, partidas).then(res => { console.log('Write complete') }).catch(error => console.error(error));
-
-	res.send(partida);*/
-	const idp = req.params.id;
-	Partida.remove({ id: idp })
+router.delete('/:partidaId', (req, res) => {
+	const id = req.params.partidaId;
+	Partida.deleteOne({ _id: id })
 		.exec()
 		.then(result => {
 			res.status(200).json(result);

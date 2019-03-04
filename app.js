@@ -9,8 +9,9 @@ require('./models/db');
 */
 
 //import router
-var indexRouter = require('./routes/index');
 var partidasRouter = require('./routes/partidas');
+var chatsRouter = require('./routes/chats');
+var blogsRouter = require('./routes/blogs');
 
 
 const path = require('path');
@@ -51,8 +52,9 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 
 //router
-app.use('/', indexRouter);
 app.use('/partidas', partidasRouter);
+app.use('/chats', chatsRouter);
+app.use('/blogs', blogsRouter);
 
 
 app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));

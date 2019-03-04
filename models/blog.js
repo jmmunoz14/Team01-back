@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const partidaSchema = new Schema({
+const blogSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    idUsuarios: [Number],
-    idJuego: Number,
-    finalizado: Boolean,
-    puntajes: [Number],
+    idUsuario: Number,
+    idMaterias: [Number],
+    idHabilidades: [Number],
+    titulo:String,
+    descripcion: String,
     chat: { 
         id: Number, 
         color: String, 
@@ -14,4 +15,4 @@ const partidaSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Partida', partidaSchema);
+module.exports = mongoose.model('Blog', blogSchema);

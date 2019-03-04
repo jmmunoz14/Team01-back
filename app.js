@@ -1,13 +1,6 @@
 require('./config/config');
 require('./models/db');
 
-
-//DB
-/*mongoose.connect()
-    .then(db=>console.log('BD connected'))
-    .catch(err=> console.log(err));
-*/
-
 //import router
 var partidasRouter = require('./routes/partidas');
 var chatsRouter = require('./routes/chats');

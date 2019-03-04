@@ -1,4 +1,5 @@
 Materia:{
+  id: 1,
   nombre: "calculo",
   juegos: [1,2,3,4],
   habilidades: [1,2,3]

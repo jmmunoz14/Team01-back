@@ -16,6 +16,7 @@
 ##### •	Chats
 ##### •	Blogs
 -
+La persistencia de estos recursos se realiza a traves de la base de datos de MongoDB
 ---
 # Instrucciones para el despliegue:
 ##### 1. Instalar/Actualizar.

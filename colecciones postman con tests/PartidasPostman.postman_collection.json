@@ -1,23 +1,32 @@
 {
 	"info": {
-		"_postman_id": "9d918200-3293-40d4-b4f6-04b82592da49",
 		"name": "PartidasPostman",
+		"_postman_id": "b8504065-8b8b-e651-9811-e312d7e1bcc9",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Get Partidas",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ebadd41-9541-424e-bee1-5495d26ce063",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -40,6 +49,20 @@
 		},
 		{
 			"name": "Get Partida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d54a4601-9060-46c8-ab3a-9ed574e4e254",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -48,7 +71,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/partidas/1",
+					"raw": "http://localhost:3000/partidas/5c7c719584035d4368fc2160",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -56,7 +79,7 @@
 					"port": "3000",
 					"path": [
 						"partidas",
-						"1"
+						"5c7c719584035d4368fc2160"
 					]
 				}
 			},
@@ -64,19 +87,31 @@
 		},
 		{
 			"name": "Post Partida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b325031e-53f9-4c7f-9091-59d500ced5dd",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"idJugadores\": [\n            89,\n            74,\n            9,\n            32,\n            70\n        ],\n        \"idJuego\": 62,\n        \"finalizado\": true,\n        \"puntajes\": [\n            38,\n            831,\n            281,\n            14,\n            104\n        ],\n        \"chat\": {\n            \"id\": 73,\n            \"color\": \"#e786d1POST\",\n            \"enabled\": true\n        }\n}"
+					"raw": "{\n    \"idUsuarios\": [\n            89,\n            74,\n            9,\n            32,\n            70\n        ],\n        \"idJuego\": 62,\n        \"finalizado\": true,\n        \"puntajes\": [\n            38,\n            831,\n            281,\n            14,\n            104\n        ],\n        \"chat\": {\n            \"id\": 73,\n            \"color\": \"#e786d1POST\",\n            \"enabled\": true\n        }\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/partidas",
@@ -94,22 +129,34 @@
 		},
 		{
 			"name": "Put Partida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f7ad7b5-657c-40bb-9177-31c0b1dac9be",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n        \"idJugadores\": [\n            89,\n            74,\n            9,\n            32,\n            70\n        ],\n        \"idJuego\": 62,\n        \"finalizado\": true,\n        \"puntajes\": [\n            38,\n            831,\n            281,\n            14,\n            104\n        ],\n        \"chat\": {\n            \"id\": 73,\n            \"color\": \"#e786d1PUT\",\n            \"enabled\": true\n        }\n    }"
+					"raw": "{\n        \"idUsuarios\": [\n            89,\n            74,\n            9,\n            32,\n            70\n        ],\n        \"idJuego\": 62,\n        \"finalizado\": true,\n        \"puntajes\": [\n            38,\n            831,\n            281,\n            14,\n            104\n        ],\n        \"chat\": {\n            \"id\": 73,\n            \"color\": \"#e786d1PUT\",\n            \"enabled\": true\n        }\n    }"
 				},
 				"url": {
-					"raw": "http://localhost:3000/partidas/1",
+					"raw": "http://localhost:3000/partidas/5c7c719584035d4368fc2160",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -117,7 +164,7 @@
 					"port": "3000",
 					"path": [
 						"partidas",
-						"1"
+						"5c7c719584035d4368fc2160"
 					]
 				}
 			},
@@ -125,6 +172,20 @@
 		},
 		{
 			"name": "Delete Partida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fa7e06c8-a983-4e28-ac98-e4aafbbb8375",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -133,7 +194,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/partidas/1",
+					"raw": "http://localhost:3000/partidas/5c7c719584035d4368fc2160",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -141,7 +202,7 @@
 					"port": "3000",
 					"path": [
 						"partidas",
-						"1"
+						"5c7c719584035d4368fc2160"
 					]
 				}
 			},

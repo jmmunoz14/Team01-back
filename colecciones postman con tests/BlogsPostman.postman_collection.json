@@ -1,23 +1,33 @@
 {
 	"info": {
-		"_postman_id": "9d918200-3293-40d4-b4f6-04b82592da49",
 		"name": "BlogsPostman",
+		"_postman_id": "dc3d62e2-03fe-4f84-31a2-feb0ba24301d",
+		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Get Blogs",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "79a51347-b2e2-40a0-8bbe-fecf887fd6a4",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -25,14 +35,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/blog",
+					"raw": "http://localhost:3000/blogs",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"blog"
+						"blogs"
 					]
 				}
 			},
@@ -40,6 +50,20 @@
 		},
 		{
 			"name": "Get Blog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e38c8533-5ec7-4729-b2ec-725d5750e6f2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -48,15 +72,15 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/blog/1",
+					"raw": "http://localhost:3000/blogs/5c7ca406c0f2ba273c6d7f06",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"blog",
-						"1"
+						"blogs",
+						"5c7ca406c0f2ba273c6d7f06"
 					]
 				}
 			},
@@ -64,29 +88,41 @@
 		},
 		{
 			"name": "Post Blog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e72d51e2-e676-40e0-9f25-c916824faccb",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"idJugadores\": [\n            89,\n            74,\n            9,\n            32,\n            70\n        ],\n        \"idJuego\": 62,\n        \"finalizado\": true,\n        \"puntajes\": [\n            38,\n            831,\n            281,\n            14,\n            104\n        ],\n        \"blog\": {\n            \"id\": 73,\n            \"color\": \"#e786d1POST\",\n            \"enabled\": true\n        }\n}"
+					"raw": "{  \r\n   \"_id\":1,\r\n   \"idUsuario\":55,\r\n   \"idMaterias\":[  \r\n      67,\r\n      68,\r\n      43\r\n   ],\r\n   \"idHabilidades\":[  \r\n      14,\r\n      44,\r\n      51\r\n   ],\r\n   \"titulo\":\"South China Normal University\",\r\n   \"descripcion\":\"Executive Secretary\",\r\n   \"chat\":{  \r\n      \"id\":46,\r\n      \"color\":\"#649b97POST\",\r\n      \"enabled\":false\r\n   }\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/blog",
+					"raw": "http://localhost:3000/blogs",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"blog"
+						"blogs"
 					]
 				}
 			},
@@ -94,30 +130,42 @@
 		},
 		{
 			"name": "Put Blog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb7f2848-9884-4460-9408-3e6987500184",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n        \"idJugadores\": [\n            89,\n            74,\n            9,\n            32,\n            70\n        ],\n        \"idJuego\": 62,\n        \"finalizado\": true,\n        \"puntajes\": [\n            38,\n            831,\n            281,\n            14,\n            104\n        ],\n        \"blog\": {\n            \"id\": 73,\n            \"color\": \"#e786d1PUT\",\n            \"enabled\": true\n        }\n    }"
+					"raw": "{  \r\n   \"idUsuario\":55,\r\n   \"idMaterias\":[  \r\n      67,\r\n      68,\r\n      43\r\n   ],\r\n   \"idHabilidades\":[  \r\n      14,\r\n      44,\r\n      51\r\n   ],\r\n   \"titulo\":\"South China Normal University\",\r\n   \"descripcion\":\"Executive Secretary\",\r\n   \"chat\":{  \r\n      \"id\":46,\r\n      \"color\":\"#649b97PUT\",\r\n      \"enabled\":false\r\n   }\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/blog/1",
+					"raw": "http://localhost:3000/blogs/5c7ca406c0f2ba273c6d7f06",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"blog",
-						"1"
+						"blogs",
+						"5c7ca406c0f2ba273c6d7f06"
 					]
 				}
 			},
@@ -125,6 +173,20 @@
 		},
 		{
 			"name": "Delete Blog",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7a238b1b-057d-41dd-a798-1d317c921dfd",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -133,15 +195,15 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/blog/1",
+					"raw": "http://localhost:3000/blogs/5c7ca406c0f2ba273c6d7f06",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"blog",
-						"1"
+						"blogs",
+						"5c7ca406c0f2ba273c6d7f06"
 					]
 				}
 			},

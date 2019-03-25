@@ -8,11 +8,8 @@ const blogSchema = new Schema({
     idHabilidades: [Number],
     titulo:String,
     descripcion: String,
-    chat: { 
-        id: Number, 
-        color: String, 
-        enabled: Boolean 
-    }
+    date:String,
+    idChat: String
 });
 
 module.exports = mongoose.model('Blog', blogSchema);

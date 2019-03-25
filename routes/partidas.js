@@ -75,7 +75,7 @@ router.post('/', (req, res, next) => {
 router.put('/:partidaId', (req, res, next) => {
 
 	Partida.findOneAndUpdate(
-		req.params.partidaId,
+		{_id:req.params.partidaId},
 		req.body,
 		{ new: true },
 		(err, todo) => {

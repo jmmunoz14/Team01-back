@@ -40,7 +40,8 @@ router.post('/', (req, res, next) => {
     const chat = new Chat({
         _id: new mongoose.Types.ObjectId(),
         color: req.body.color,
-        enabled: req.body.enabled
+        enabled: req.body.enabled,
+        comentarios:req.body.comentarios
     });
     chat.save()
         .then(result => {
@@ -61,7 +62,7 @@ router.post('/', (req, res, next) => {
 router.put('/:chatId', (req, res, next) => {
 
     Chat.findOneAndUpdate(
-        req.params.chatId,
+        {_id:req.params.chatId},
         req.body,
         { new: true },
         (err, todo) => {
@@ -83,6 +84,17 @@ router.delete('/:chatId', (req, res) => {
             console.log(err);
             res.status(500).json({ error: err });
         });
+});
+
+router.delete('/', (req, res) => {
+    Chat.deleteMany().exec()
+    .then(result => {
+        res.status(200).json(result);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({ error: err });
+    });
 });
 
 module.exports = router;

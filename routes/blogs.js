@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var Joi = require('joi');
 const mongoose = require('mongoose');
 const Blog = require('../models/blog');
 
@@ -44,7 +43,8 @@ router.post('/', (req, res, next) => {
         idHabilidades: req.body.idHabilidades,
         titulo: req.body.titulo,
         descripcion: req.body.descripcion,
-        chat: req.body.chat
+        date:req.body.date,
+        idChat: req.body.idChat
     });
     blog.save()
         .then(result => {
@@ -63,12 +63,12 @@ router.post('/', (req, res, next) => {
 });
 
 router.put('/:blogId', (req, res, next) => {
-
     Blog.findOneAndUpdate(
-        req.params.blogId,
+        {_id:req.params.blogId},
         req.body,
         { new: true },
         (err, todo) => {
+            console.log(todo)
             if (err) return res.status(500).send(err);
             return res.send(todo);
         }

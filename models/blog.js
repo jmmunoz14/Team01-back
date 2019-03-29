@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const blogSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    idUsuario: Number,
+    idUsuario: String,
     idMaterias: [Number],
     idHabilidades: [Number],
     titulo:String,

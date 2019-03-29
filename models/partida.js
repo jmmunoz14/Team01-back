@@ -7,11 +7,7 @@ const partidaSchema = new Schema({
     idJuego: Number,
     finalizado: Boolean,
     puntajes: [Number],
-    chat: { 
-        id: Number, 
-        color: String, 
-        enabled: Boolean 
-    }
+    idChat: String
 });
 
 module.exports = mongoose.model('Partida', partidaSchema);

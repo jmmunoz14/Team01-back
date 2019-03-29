@@ -10,7 +10,7 @@ function validatePartida(partida) {
 		finalizado: Joi.boolean().required(),
 		idUsuarios: Joi.optional(),
 		puntajes: Joi.optional(),
-		chat: Joi.optional()
+		idChat: Joi.optional()
 	};
 	return Joi.validate(partida, schema);
 };
@@ -54,7 +54,7 @@ router.post('/', (req, res, next) => {
 		idJuego: req.body.idJuego,
 		finalizado: req.body.finalizado,
 		puntajes: req.body.puntajes,
-		chat: req.body.chat
+		idChat: req.body.idChat
 	});
 	partida.save()
 		.then(result => {

@@ -43,8 +43,9 @@ router.post('/', (req, res, next) => {
         idHabilidades: req.body.idHabilidades,
         titulo: req.body.titulo,
         descripcion: req.body.descripcion,
-        date:req.body.date,
-        idChat: req.body.idChat
+        date: req.body.date,
+        idChat: req.body.idChat,
+        idioma: req.body.idioma
     });
     blog.save()
         .then(result => {
@@ -64,7 +65,7 @@ router.post('/', (req, res, next) => {
 
 router.put('/:blogId', (req, res, next) => {
     Blog.findOneAndUpdate(
-        {_id:req.params.blogId},
+        { _id: req.params.blogId },
         req.body,
         { new: true },
         (err, todo) => {

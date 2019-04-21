@@ -6,10 +6,11 @@ const blogSchema = new Schema({
     idUsuario: String,
     idMaterias: [Number],
     idHabilidades: [Number],
-    titulo:String,
+    titulo: String,
     descripcion: String,
-    date:String,
-    idChat: String
+    date: String,
+    idChat: String,
+    idioma: String
 });
 
 module.exports = mongoose.model('Blog', blogSchema);

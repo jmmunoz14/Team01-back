@@ -54,7 +54,12 @@ router.post("/", (req, res, next) => {
     const materia = new Materia({
         _id: new mongoose.Types.ObjectId(),
         id: req.body.id,
-        name: req.body.name,
+        nameEn: req.body.nameEn,
+        nameEs: req.body.nameEs,
+        shortName: req.body.shortName,
+        img: req.body.img,
+        descEn: req.body.descEn,
+        descEs: req.body.descEs,
         juegos: req.body.juegos,
         habilidades: req.body.habilidades
     });

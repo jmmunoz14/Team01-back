@@ -42,10 +42,29 @@ module.exports.obtain = (req, res, next) => {
 
 }
 
-module.exports.obtainall = (req, res, next) => {
+module.exports.obtainalles = (req, res, next) => {
     var pregunta = new Pregunta();
     
-    pregunta=Pregunta.find({ },
+    pregunta=Pregunta.find({idioma:'es' },
+        (err, pregunta) => {
+            if (err)
+            res.send(err);
+            // unknown user
+            else if (!pregunta)
+               res.send('No existen preguntas de esta materia');
+            // wrong password
+            else
+            res.send(pregunta);
+ 
+    });
+
+}
+
+
+module.exports.obtainallen = (req, res, next) => {
+    var pregunta = new Pregunta();
+    
+    pregunta=Pregunta.find({ idioma:'en'},
         (err, pregunta) => {
             if (err)
             res.send(err);

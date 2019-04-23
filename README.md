@@ -19,20 +19,18 @@
 -
 ---
 # Instrucciones para el despliegue:
-##### 1. Instalar/Actualizar.
--->
-```sh
-$ npm update
-$ npm install
-```
-##### 2. Es necesario instalar algunas dependencias que pueda pedir el archivo de configuración packages.json (Mongoose, passport, entre otros).
-##### 3. Ejecución.
--->
-```sh
-$ npm start
-```
-##### 4. Si se inició de forma correcta la conexión con el servidor, obtendrá un mensaje de confirmación:
--->
+Descargue/clone el repositorio del back-end [Team01-back](https://github.com/isis3710-uniandes/Team01-back)
+
+Instale las dependencias
+### `npm install`
+Actualice npm
+### `npm update`
+Si es necesario, realice los fixes pertinentes
+### `npm audit fix`
+Ejecute el proyecto
+### `npm start`
+
+Ahora, debería tener corriendo el back-end en localhost:3000
 ```sh
 $ Server started at port : 3000
 ``` 

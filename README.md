@@ -14,12 +14,11 @@
 ##### •	Materias
 ##### •	Habilidades
 ##### •	Juegos
-##### •	Chats
 ##### •	Blogs
 -
 ---
 # Instrucciones para el despliegue:
-Descargue/clone el repositorio del back-end [Team01-back](https://github.com/isis3710-uniandes/Team01-back)
+Descargue/clone el repositorio
 
 Instale las dependencias
 ### `npm install`

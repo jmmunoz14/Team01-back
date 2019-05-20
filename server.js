@@ -63,8 +63,11 @@ app.use('/chats', chatsRouter);
 app.use('/blogs', blogsRouter);
 
 
-app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, err => {
+    if(err) throw err;
+    console.log("%c Server running", "color: green");
+});
 if (process.env.NODE_ENV === 'production') {
 	// Serve any static files
 	app.use(express.static(path.join(__dirname, 'client/build')));

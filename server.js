@@ -62,8 +62,8 @@ app.use('/partidas', partidasRouter);
 app.use('/chats', chatsRouter);
 app.use('/blogs', blogsRouter);
 
-
-app.listen(process.env.PORT || 3001, () => console.log(`Server started at port : ${process.env.PORT}`));
+console.log(process.env.PORT)
+app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
 
 if (process.env.NODE_ENV === 'production') {
 	// Serve any static files

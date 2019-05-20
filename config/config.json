@@ -5,7 +5,7 @@
         "MONGODB_URI": "mongodb://admin:password1@ds159025.mlab.com:59025/team1web"
     },
     "production": {
-        "PORT": 80,
+        "PORT": 3000,
         "MONGODB_URI": "mongodb://xxxxx/DB_Name"
     }
 }

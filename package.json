@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node",
+    "start": "node server.js",
     "dev:app": "cd client && yarn start",
     "build:app": "cd client && yarn build",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"

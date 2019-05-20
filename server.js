@@ -63,8 +63,9 @@ app.use('/partidas', partidasRouter);
 app.use('/chats', chatsRouter);
 app.use('/blogs', blogsRouter);
 
+app.set(process.env.PORT||5000);
 
-app.listen(process.env.PORT||3000);
+app.listen('port',(process.env.PORT||5000));
 
 
 if (process.env.NODE_ENV === 'production') {

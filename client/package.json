@@ -23,7 +23,7 @@
     "sweetalert2": "^8.11.1",
     "typescript": "^3.4.5"
   },
-  "proxy": "https://my-math-app-uniandes.herokuapp.com/",
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -33,6 +33,10 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+
+  "proxy": "https://my-math-app-uniandes.herokuapp.com/",
+
+  
   "browserslist": [
     ">0.2%",
     "not dead",

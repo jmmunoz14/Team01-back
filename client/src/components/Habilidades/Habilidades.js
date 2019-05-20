@@ -71,7 +71,7 @@ export class Habilidades extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/habilidades/')
+        fetch('http://my-math-app-uniandes:3000/habilidades/')
             .then(results => {
                 return results.json();
 

@@ -13,7 +13,7 @@ export class PostPartida extends Component {
 
   componentDidMount = () => {
     axios
-      .get('http://localhost:3000/api/obtainall')
+      .get('http://my-math-app-uniandes:3000/api/obtainall')
       .then(res => this.setState({ usuarios: res.data }))
   }
 

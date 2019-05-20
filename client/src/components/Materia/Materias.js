@@ -68,7 +68,7 @@ export class Materias extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/materias/')
+        fetch('http://my-math-app-uniandes:3000/materias/')
             .then(results => {
                 return results.json();
 

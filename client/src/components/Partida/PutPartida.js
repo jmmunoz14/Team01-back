@@ -15,11 +15,11 @@ export class PutBlog extends Component {
 
     componentDidMount = () => {
         axios
-            .get('http://localhost:3000/materias')
+            .get('http://my-math-app-uniandes:3000/materias')
             .then(res => this.setState({ materias: res.data }))
 
         axios
-            .get('http://localhost:3000/blogs/' + this.props.match.params.id)
+            .get('http://my-math-app-uniandes:3000/blogs/' + this.props.match.params.id)
             .then(res => {
                 this.setState({ titulo: res.data.titulo })
                 this.setState({ descripcion: res.data.descripcion })

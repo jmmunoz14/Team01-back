@@ -1,2 +1,2 @@
-const origen = 'http://localhost:3000'
+const origen = 'http://my-math-app-uniandes:3000'
 export {origen}

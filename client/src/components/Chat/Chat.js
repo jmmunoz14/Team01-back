@@ -16,7 +16,7 @@ export class Chat extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3000/chats/" + this.props.idChat).then(res => {
+    axios.get("http://my-math-app-uniandes:3000/chats/" + this.props.idChat).then(res => {
       this.setState({ chat: res.data });
       this.setState({ comentLoad: true });
     });
@@ -43,7 +43,7 @@ export class Chat extends Component {
     };
 
     
-    axios.put(`http://localhost:3000/chats/${chat._id}`, newChat, {
+    axios.put(`http://my-math-app-uniandes:3000/chats/${chat._id}`, newChat, {
       headers: {
                   authorization: this.state.authHeader
               }

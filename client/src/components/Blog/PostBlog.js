@@ -15,7 +15,7 @@ export class PostBlog extends Component {
 
   componentDidMount = () => {
     axios
-      .get('http://localhost:3000/materias')
+      .get('http://my-math-app-uniandes:3000/materias')
       .then(res => this.setState({ materias: res.data }))
   }
 

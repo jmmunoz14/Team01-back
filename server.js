@@ -5,6 +5,7 @@ require('./models/db');
 var partidasRouter = require('./routes/partidas');
 var chatsRouter = require('./routes/chats');
 var blogsRouter = require('./routes/blogs');
+var express = require('express');
 
 
 const path = require('path');
@@ -62,9 +63,14 @@ app.use('/partidas', partidasRouter);
 app.use('/chats', chatsRouter);
 app.use('/blogs', blogsRouter);
 
+app.set('port', (process.env.PORT || 5000));
 
-app.listen(process.env.PORT || 3000 ,function(){
-    console.log("up and running on port "+process.env.PORT);
+//For avoidong Heroku $PORT error
+app.get('/', function(request, response) {
+    var result = 'App is running'
+    response.send(result);
+}).listen(app.get('port'), function() {
+    console.log('App is running, server is listening on port ', app.get('port'));
 });
 
 if (process.env.NODE_ENV === 'production') {

@@ -36,65 +36,121 @@ router.get('/:chatId', (req, res, next) => {
         });
 });
 
-router.post('/', (req, res, next) => {
-    const chat = new Chat({
-        _id: new mongoose.Types.ObjectId(),
-        color: req.body.color,
-        enabled: req.body.enabled,
-        comentarios:req.body.comentarios
-    });
-    chat.save()
-        .then(result => {
-            console.log(result);
-            res.status(201).json({
-                messahe: "Handling POST request to /chats",
-                chatCreada: result
+router.post('/', verifyToken, (req, res, next) => {
+    var jwt = req.app.get('jwt');
+
+    jwt.verify(req.token, 'secretkey', (err, authData) => {
+        if(err ){
+            res.status(403).json({'error': 'No tiene un token valido'});
+        }else {
+            const chat = new Chat({
+                _id: new mongoose.Types.ObjectId(),
+                color: req.body.color,
+                enabled: req.body.enabled,
+                comentarios:req.body.comentarios
             });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            })
-        });
-});
-
-router.put('/:chatId', (req, res, next) => {
-
-    Chat.findOneAndUpdate(
-        {_id:req.params.chatId},
-        req.body,
-        { new: true },
-        (err, todo) => {
-            if (err) return res.status(500).send(err);
-            return res.send(todo);
+            chat.save()
+                .then(result => {
+                    console.log(result);
+                    res.status(201).json({
+                        messahe: "Handling POST request to /chats",
+                        chatCreada: result
+                    });
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(500).json({
+                        error: err
+                    })
+                });
         }
-    );
-
-});
-
-router.delete('/:chatId', (req, res) => {
-    const id = req.params.chatId;
-    Chat.deleteOne({ _id: id })
-        .exec()
-        .then(result => {
-            res.status(200).json(result);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({ error: err });
-        });
-});
-
-router.delete('/', (req, res) => {
-    Chat.deleteMany().exec()
-    .then(result => {
-        res.status(200).json(result);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json({ error: err });
     });
 });
+
+router.put('/:chatId', verifyToken, (req, res, next) => {
+    var jwt = req.app.get('jwt');
+
+    jwt.verify(req.token, 'secretkey', (err, authData) => {
+        if(err ){
+            res.status(403).json({'error': 'No tiene un token valido'});
+        }else {
+            Chat.findOneAndUpdate(
+                {_id:req.params.chatId},
+                req.body,
+                { new: true },
+                (err, todo) => {
+                    if (err) return res.status(500).send(err);
+                    return res.send(todo);
+                }
+            );
+        }
+    });
+
+});
+
+router.delete('/:chatId', verifyToken, (req, res) => {
+    var jwt = req.app.get('jwt');
+
+    jwt.verify(req.token, 'secretkey', (err, authData) => {
+        if(err ){
+            res.status(403).json({'error': 'No tiene un token valido'});
+        }else {
+            const id = req.params.chatId;
+            Chat.deleteOne({ _id: id })
+                .exec()
+                .then(result => {
+                    res.status(200).json(result);
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(500).json({ error: err });
+                });
+        }
+    });
+});
+
+router.delete('/',verifyToken, (req, res) => {
+
+    var jwt = req.app.get('jwt');
+
+    jwt.verify(req.token, 'secretkey', (err, authData) => {
+        if(err ){
+            res.status(403).json({'error': 'No tiene un token valido'});
+        }else {
+            Chat.deleteMany().exec()
+            .then(result => {
+                res.status(200).json(result);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({ error: err });
+            });
+        }
+    });
+});
+
+// FORMAT OF TOKEN
+// Authorization: Team01 <access_token>
+
+// Verify Token
+function verifyToken(req, res, next) {
+    // Get auth header value
+    const bearerHeader = req.headers['authorization'];
+    // Check if bearer is undefined
+    if(typeof bearerHeader !== 'undefined') {
+      // Split at the space
+      const bearer = bearerHeader.split(' ');
+      // Get token from array
+      const bearerToken = bearer[1];
+      // Set the token
+      req.token = bearerToken;
+      // Next middleware
+      next();
+    } else {
+      // Forbidden
+      res.sendStatus(403);
+    }
+}
+
 
 module.exports = router;

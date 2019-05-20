@@ -55,9 +55,15 @@ module.exports.login = (req, res, next) =>{
                 //   }); 
                 
                 jwt.sign({user}, 'secretkey', (err, token) => {
-                    res.json({
-                      token
-                    });
+                    
+                    if(err){
+                        res.json({Error: err})
+                    } else {
+                        res.json({
+                                    token,
+                                    user
+                                });
+                    }
                   });
                 
                 

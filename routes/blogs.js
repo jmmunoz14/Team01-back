@@ -35,7 +35,7 @@ router.get('/:blogId', (req, res, next) => {
         });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/',verifyToken, (req, res, next) => {
 
     var jwt = req.app.get('jwt');
 
@@ -75,7 +75,7 @@ router.post('/', (req, res, next) => {
 
 });
 
-router.put('/:blogId', (req, res, next) => {
+router.put('/:blogId', verifyToken,(req, res, next) => {
     var jwt = req.app.get('jwt');
 
     jwt.verify(req.token, 'secretkey', (err, authData) => {
@@ -97,7 +97,7 @@ router.put('/:blogId', (req, res, next) => {
 
 });
 
-router.delete('/:blogId', (req, res) => {
+router.delete('/:blogId', verifyToken,(req, res) => {
     var jwt = req.app.get('jwt');
 
     jwt.verify(req.token, 'secretkey', (err, authData) => {

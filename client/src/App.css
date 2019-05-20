@@ -1,0 +1,180 @@
+html {
+  scroll-behavior: smooth;
+}
+.App {
+  text-align: center;
+}
+.card {
+  padding: 50px;
+  Margin:50px;
+  background: #416cb2!important;
+}
+.boton {
+  margin: 10px!important;
+}
+.respuestatext{
+  font-weight: 800;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #A3FFFF;
+  line-height: 2;
+  margin-right: 10px;
+  font-size: 30px;
+
+  padding-left:100px;
+}
+
+.card-title
+{
+  font-weight: 800;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #A3FFFF;
+  line-height: 1.2;
+  font-size: 26px;
+}
+.preguntaText {
+  font-weight: 800;
+  color:rgb(255, 255, 255);
+  line-height: 1.2;
+  font-size: 36px;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+
+}
+.textInside{
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: 20px;
+
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #505050;
+}
+.icons{
+  width: 150px;
+  height: calc(100% - 47px);
+  margin-top: 47px;
+  border:10px solid #e6e6e6;
+  
+}
+.mainImage
+{
+  width: 500px;
+  height: calc(100% - 47px);
+  margin-top: 47px;
+  border-radius: 50%;
+  padding:10px;
+  border:10px solid #416cb2;
+  background-color:rgb(255, 246, 198);
+}
+/* change the background color */
+.navbar-custom {
+  background-color: #416cb2;
+}
+.welcome{
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: 25px;
+
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.welcome2{
+  color: #2a2929;
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: 36px;
+
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: rgb(255, 253, 253);
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 50px
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #ffffff;
+  
+}
+
+.todo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100% - 47px);
+  margin-top: 47px;
+}
+.quiz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  border-radius: 25px;
+  background: #416cb2;
+  color: white;
+  width: 350px;
+  height: 80px; 
+
+
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+.titulo {
+  font-size: 50px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.link-to-quiz{
+  color: white;
+
+}
+.link-to-quiz:hover .close:hover{
+  opacity: 1 !important;
+}
+.click-quiz{
+  color: darkblue !important;
+  opacity: 1 !important; 
+}
+.close:hover{
+  color: darkblue !important;
+  opacity: 1 !important; 
+}
+.close{
+  color: black !important;
+  opacity: 1 !important; 
+}
+

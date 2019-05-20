@@ -62,10 +62,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/partidas', partidasRouter);
 app.use('/chats', chatsRouter);
 app.use('/blogs', blogsRouter);
-
-app.set(process.env.PORT||5000);
-
-app.listen('port',(process.env.PORT||5000));
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => {
+  console.log(`Mixing it up on port ${PORT}`)
+})
 
 
 if (process.env.NODE_ENV === 'production') {

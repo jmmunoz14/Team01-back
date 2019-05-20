@@ -62,10 +62,9 @@ app.use('/partidas', partidasRouter);
 app.use('/chats', chatsRouter);
 app.use('/blogs', blogsRouter);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, err => {
-    if(err) throw err;
-    console.log("%c Server running", "color: green");
+
+app.listen(process.env.PORT || 3000 ,function(){
+    console.log("up and running on port "+process.env.PORT);
 });
 
 if (process.env.NODE_ENV === 'production') {

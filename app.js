@@ -11,6 +11,7 @@ const path = require('path');
 const morgan = require('morgan');
 var mongoose = require('mongoose');
 const express = require('express');
+const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const rtsUser = require('./routes/user');
@@ -20,9 +21,13 @@ const juegoRoutes = require("./routes/juegos");
 const materiaRoutes = require("./routes/materias");
 const habilidadRoutes = require("./routes/habilidades");
 
+
+
 var app = express();
  
 // middleware
+app.set('jwt',jwt);
+
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/api', rtsUser);

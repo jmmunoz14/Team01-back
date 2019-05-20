@@ -36,58 +36,110 @@ router.get('/:blogId', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-    const blog = new Blog({
-        _id: new mongoose.Types.ObjectId(),
-        idUsuario: req.body.idUsuario,
-        idMaterias: req.body.idMaterias,
-        idHabilidades: req.body.idHabilidades,
-        titulo: req.body.titulo,
-        descripcion: req.body.descripcion,
-        date: req.body.date,
-        idChat: req.body.idChat,
-        idioma: req.body.idioma
-    });
-    blog.save()
-        .then(result => {
-            console.log(result);
-            res.status(201).json({
-                messahe: "Handling POST request to /blogs",
-                blogCreada: result
+
+    var jwt = req.app.get('jwt');
+
+    jwt.verify(req.token, 'secretkey', (err, authData) => {
+        if(err ){
+            res.status(403).json({'error': 'No tiene un token valido'});
+        }else {
+            const blog = new Blog({
+                _id: new mongoose.Types.ObjectId(),
+                idUsuario: req.body.idUsuario,
+                idMaterias: req.body.idMaterias,
+                idHabilidades: req.body.idHabilidades,
+                titulo: req.body.titulo,
+                descripcion: req.body.descripcion,
+                date: req.body.date,
+                idChat: req.body.idChat,
+                idioma: req.body.idioma
             });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            })
-        });
+            blog.save()
+                .then(result => {
+                    console.log(result);
+                    res.status(201).json({
+                        messahe: "Handling POST request to /blogs",
+                        blogCreada: result,
+                        authData
+                    });
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(500).json({
+                        error: err
+                    })
+                });
+        }
+    });
+
+
 });
 
 router.put('/:blogId', (req, res, next) => {
-    Blog.findOneAndUpdate(
-        { _id: req.params.blogId },
-        req.body,
-        { new: true },
-        (err, todo) => {
-            console.log(todo)
-            if (err) return res.status(500).send(err);
-            return res.send(todo);
+    var jwt = req.app.get('jwt');
+
+    jwt.verify(req.token, 'secretkey', (err, authData) => {
+        if(err ){
+            res.status(403).json({'error': 'No tiene un token valido'});
+        }else {
+            Blog.findOneAndUpdate(
+                { _id: req.params.blogId },
+                req.body,
+                { new: true },
+                (err, todo) => {
+                    console.log(todo)
+                    if (err) return res.status(500).send(err);
+                    return res.send(todo);
+                }
+            );
         }
-    );
+    });
 
 });
 
 router.delete('/:blogId', (req, res) => {
-    const id = req.params.blogId;
-    Blog.deleteOne({ _id: id })
-        .exec()
-        .then(result => {
-            res.status(200).json(result);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({ error: err });
-        });
+    var jwt = req.app.get('jwt');
+
+    jwt.verify(req.token, 'secretkey', (err, authData) => {
+        if(err ){
+            res.status(403).json({'error': 'No tiene un token valido'});
+        }else {
+            const id = req.params.blogId;
+            Blog.deleteOne({ _id: id })
+                .exec()
+                .then(result => {
+                    res.status(200).json({result,authData});
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(500).json({ error: err });
+                });
+        }
+    });
 });
+
+// FORMAT OF TOKEN
+// Authorization: Team01 <access_token>
+
+// Verify Token
+function verifyToken(req, res, next) {
+    // Get auth header value
+    const bearerHeader = req.headers['authorization'];
+    // Check if bearer is undefined
+    if(typeof bearerHeader !== 'undefined') {
+      // Split at the space
+      const bearer = bearerHeader.split(' ');
+      // Get token from array
+      const bearerToken = bearer[1];
+      // Set the token
+      req.token = bearerToken;
+      // Next middleware
+      next();
+    } else {
+      // Forbidden
+      res.sendStatus(403);
+    }
+}
+
 
 module.exports = router;

@@ -10,6 +10,9 @@ var userSchema = new mongoose.Schema({
         required: 'User name can\'t be empty',
         unique: true
     },
+    isAdmin: {
+        type: String
+    },
     email: {
         type: String,
         required: 'Email can\'t be empty',

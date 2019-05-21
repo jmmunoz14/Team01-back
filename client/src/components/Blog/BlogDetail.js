@@ -21,7 +21,7 @@ export class BlogDetail extends Component {
 
   componentDidMount() {
     axios
-      .get("http://my-math-app-uniandes:3000/blogs/" + this.props.match.params.id)
+      .get("https://team01back.herokuapp.com/blogs/" + this.props.match.params.id)
       .then(res => {
         this.setState({ blog: res.data });
         this.setState({ chatLoad: true });

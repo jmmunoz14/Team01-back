@@ -18,7 +18,7 @@ export class Toolbar extends Component {
     setLoggedUser = (e) => {
         e.preventDefault();
  
-        axios.get('http://my-math-app-uniandes:3000/api/login', 
+        axios.get('https://team01back.herokuapp.com/api/login', 
             { 
                 headers: { 
                             username: this.state.user,
@@ -82,7 +82,7 @@ export class Toolbar extends Component {
     setLogedUser = (e) => {
         e.preventDefault();
         axios
-            .get('http://my-math-app-uniandes:3000/api/obtainall')
+            .get('https://team01back.herokuapp.com/api/obtainall')
             .then(res => {
                 const use = res.data.filter(usuario => usuario.username === this.state.user)[0]
                 if (use) {
@@ -152,7 +152,7 @@ export class Toolbar extends Component {
     registerUser = (e) => {
         e.preventDefault();
         axios
-            .post('http://my-math-app-uniandes:3000/api/register', { id: (Math.random() * 10000000000) + 200, email: this.state.email, username: this.state.user, password: this.state.password })
+            .post('https://team01back.herokuapp.com/api/register', { id: (Math.random() * 10000000000) + 200, email: this.state.email, username: this.state.user, password: this.state.password })
             .then(res => {
                 var done = "User created, now you can Log in"
                 if (window.navigator.language.startsWith("es")) {

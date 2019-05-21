@@ -71,7 +71,7 @@ export class Habilidades extends Component {
     }
 
     componentDidMount() {
-        fetch('http://my-math-app-uniandes:3000/habilidades/')
+        fetch('https://team01back.herokuapp.com/habilidades/')
             .then(results => {
                 return results.json();
 

@@ -1,2 +1,4 @@
-const origen = 'http://my-math-app-uniandes:5000'
+const origen = 'https://team01back.herokuapp.com/'
+ 
+
 export {origen}

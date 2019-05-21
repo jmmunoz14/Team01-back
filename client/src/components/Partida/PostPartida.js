@@ -13,7 +13,7 @@ export class PostPartida extends Component {
 
   componentDidMount = () => {
     axios
-      .get('http://my-math-app-uniandes:3000/api/obtainall')
+      .get('https://team01back.herokuapp.com/api/obtainall')
       .then(res => this.setState({ usuarios: res.data }))
   }
 

@@ -28,12 +28,12 @@ export class Blogs extends Component {
 
     componentDidMount() {
         axios
-            .get('http://my-math-app-uniandes:3000/blogs')
+            .get('https://team01back.herokuapp.com/blogs')
             .then(res => {
                 this.setState({ blogs: res.data, backCargado: true })
             })
         axios
-            .get('http://my-math-app-uniandes:3000/chats')
+            .get('https://team01back.herokuapp.com/chats')
             .then(res => this.setState({ chats: res.data, backCargado2: true }))
     }
 
@@ -44,7 +44,7 @@ export class Blogs extends Component {
             comentarios: []
         }
 
-        axios.post('http://my-math-app-uniandes:3000/chats', chat, {
+        axios.post('https://team01back.herokuapp.com/chats', chat, {
             headers: {
                         authorization: this.state.authHeader
                     }
@@ -64,7 +64,7 @@ export class Blogs extends Component {
 
 
             axios
-                .post('http://my-math-app-uniandes:3000/blogs', blognew, {
+                .post('https://team01back.herokuapp.com/blogs', blognew, {
                         headers: {
                                     authorization: this.state.authHeader
                                 }
@@ -120,7 +120,7 @@ export class Blogs extends Component {
             confirmButtonText: confirm
         }).then((result) => {
             if (result.value) {
-                axios.delete(`http://my-math-app-uniandes:3000/blogs/${id}`, {
+                axios.delete(`https://team01back.herokuapp.com/blogs/${id}`, {
                     headers: {
                                 authorization: this.state.authHeader
                             }
@@ -130,7 +130,7 @@ export class Blogs extends Component {
                     })
                 )
 
-                axios.delete(`http://my-math-app-uniandes:3000/chats/${idChat}`, {
+                axios.delete(`https://team01back.herokuapp.com/chats/${idChat}`, {
                     headers: {
                                 authorization: this.state.authHeader
                             }
@@ -152,7 +152,7 @@ export class Blogs extends Component {
 
     handlePutBlog = (blog, id) => {
         const { blogs } = this.state
-        axios.put(`http://my-math-app-uniandes:3000/blogs/${id}`, blog, {
+        axios.put(`https://team01back.herokuapp.com/blogs/${id}`, blog, {
             headers: {
                         authorization: this.state.authHeader
                     }

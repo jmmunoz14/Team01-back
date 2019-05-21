@@ -16,7 +16,7 @@ export class Chat extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://my-math-app-uniandes:3000/chats/" + this.props.idChat).then(res => {
+    axios.get("https://team01back.herokuapp.com/chats/" + this.props.idChat).then(res => {
       this.setState({ chat: res.data });
       this.setState({ comentLoad: true });
     });
@@ -43,7 +43,7 @@ export class Chat extends Component {
     };
 
     
-    axios.put(`http://my-math-app-uniandes:3000/chats/${chat._id}`, newChat, {
+    axios.put(`https://team01back.herokuapp.com/chats/${chat._id}`, newChat, {
       headers: {
                   authorization: this.state.authHeader
               }
